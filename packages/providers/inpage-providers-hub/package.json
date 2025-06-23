@@ -57,5 +57,5 @@
     "@types/lodash-es": "^4.17.12",
     "@types/node": "^20.12.7"
   },
-  "gitHead": "1c040d74fbfbd9951731ede1e0cedc72d6c09cb5"
+  "gitHead": "369bcca06b9e18e7459130ac7411053a7126c790"
 }
