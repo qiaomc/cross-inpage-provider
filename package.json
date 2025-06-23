@@ -37,6 +37,7 @@
     "@types/node": "^20.12.7",
     "@types/react": "^17.0.21",
     "@types/react-native": "^0.67.6",
+    "@types/electron": "^1.6.12",   
     "@typescript-eslint/eslint-plugin": "^5.7.0",
     "@typescript-eslint/parser": "^5.7.0",
     "concurrently": "^7.1.0",

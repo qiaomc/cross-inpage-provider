@@ -1,8 +1,23 @@
 {
   "extends": "../../tsconfig.json",
-  "include": ["./src"],
+  "include": [
+    "./src"
+  ],
   "compilerOptions": {
     "outDir": "./dist",
     "jsx": "react"
+  },
+  "typeRoots": [
+    "node_modules/@types",
+    "typings", // 添加自定义类型目录
+    "node_modules/react-native-webview" // 显式指向模块
+  ],
+  "paths": {
+    "react-native-webview": [
+      "node_modules/react-native-webview"
+    ],
+    "react-native-webview/*": [
+      "node_modules/react-native-webview/*"
+    ]
   }
 }
