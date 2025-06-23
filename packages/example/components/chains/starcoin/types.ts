@@ -1,5 +1,5 @@
 export interface IProviderApi {
-  isOneKey?: boolean;
+  isQiaoMc?: boolean;
   request<T>({ method, params }: { method: string; params?: any }): Promise<T>;
 }
 

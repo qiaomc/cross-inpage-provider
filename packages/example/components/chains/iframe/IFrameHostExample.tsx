@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/restrict-plus-operands,@typescript-eslint/ban-ts-comment */
 import React from 'react';
 import { useLayoutEffect, useRef } from 'react';
-import { JsBridgeIframe } from '@onekeyfe/cross-inpage-provider-core';
-import { IJsonRpcRequest } from '@onekeyfe/cross-inpage-provider-types';
+import { JsBridgeIframe } from '@qiaomcfe/cross-inpage-provider-core';
+import { IJsonRpcRequest } from '@qiaomcfe/cross-inpage-provider-types';
 import { sendMethod } from './utils';
 import { Button } from '../../ui/button';
 
@@ -24,7 +24,7 @@ export default function IFrameHostExample() {
       remoteFrame: iframeRef.current?.contentWindow,
       remoteFrameName: 'FRAME',
       selfFrameName: 'HOST',
-      channel: 'onekey-js-sdk',
+      channel: 'qiaomc-js-sdk',
       receiveHandler(payload) {
         const { method, params } = payload.data as IJsonRpcRequest;
         console.log('receiveHandler >>>>> ', { method, params });

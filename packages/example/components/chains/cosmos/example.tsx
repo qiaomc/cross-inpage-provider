@@ -57,9 +57,9 @@ export default function Example() {
       inject: 'keplr',
     },
     {
-      uuid: 'injected-onekey',
-      name: 'Injected OneKey',
-      inject: '$onekey.cosmos',
+      uuid: 'injected-qiaomc',
+      name: 'Injected QiaoMc',
+      inject: '$qiaomc.cosmos',
     },
   ]);
 

@@ -6,7 +6,7 @@ import {
   IJsBridgeMessagePayload,
   IPostMessageEventData,
   IOptionsWithDebugLogger,
-} from '@onekeyfe/cross-inpage-provider-types';
+} from '@qiaomcfe/cross-inpage-provider-types';
 import { JsBridgeBase } from './JsBridgeBase';
 
 let postMessageListenerAdded = false;
@@ -52,7 +52,7 @@ function setupPostMessageListener(options: ISetupPostMessageListenerOptions = {}
         eventData.frameName === config.remoteFrameName
       ) {
         const payload = eventData.payload as IJsBridgeMessagePayload;
-        const jsBridge = options.bridge ?? (window?.$onekey?.jsBridge as JsBridgeBase);
+        const jsBridge = options.bridge ?? (window?.$qiaomc?.jsBridge as JsBridgeBase);
         if (jsBridge) {
           jsBridge.receive(payload);
         }

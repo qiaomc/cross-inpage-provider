@@ -264,7 +264,7 @@ function Example() {
       <ApiGroup title="SignMessage">
         {/* <ApiPayload
           title="signMessage"
-          description="签名消息, signMessage 不安全已经弃用, 目前（OneKey、Suiet、Sui Wallet、Martian） signMessage 实际实现已经变成了 signPersonalMessage"
+          description="签名消息, signMessage 不安全已经弃用, 目前（QiaoMc、Suiet、Sui Wallet、Martian） signMessage 实际实现已经变成了 signPersonalMessage"
           presupposeParams={params.signMessage}
           onExecute={async (request: string) => {
             const res = await signMessage({

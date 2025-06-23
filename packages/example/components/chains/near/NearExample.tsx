@@ -3,14 +3,14 @@
 /* eslint-disable @typescript-eslint/restrict-plus-operands,@typescript-eslint/ban-ts-comment */
 import React from 'react';
 import {
-  OneKeyNearProvider,
+  QiaoMcNearProvider,
   NearAccountsChangedPayload,
   NearNetworkChangedPayload,
   TransactionCreatorParams,
   SignMessagesResult,
   SignInResult,
   SignTransactionsResult,
-} from '@onekeyfe/onekey-near-provider';
+} from '@qiaomcfe/qiaomc-near-provider';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import * as NearApi from 'near-api-js';
 import { random } from 'lodash';
@@ -23,15 +23,15 @@ const hasWindow = typeof window !== 'undefined';
 
 declare global {
   interface Window {
-    provider: OneKeyNearProvider;
+    provider: QiaoMcNearProvider;
     nearAPI: typeof NearApi;
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    OneKeyNearProvider: any;
+    QiaoMcNearProvider: any;
   }
 }
 
 window.nearAPI = NearApi;
-window.OneKeyNearProvider = OneKeyNearProvider;
+window.QiaoMcNearProvider = QiaoMcNearProvider;
 
 // TODO mobile web
 // TODO Toggle debugLogger button
@@ -62,7 +62,7 @@ function transactionCreator({
 }
 
 export default function NearExample() {
-  const [provider, setProvider] = useState<OneKeyNearProvider | null>(null);
+  const [provider, setProvider] = useState<QiaoMcNearProvider | null>(null);
   const [accountId, setAccountId] = useState('');
   const [publicKey, setPublicKey] = useState('');
   const [networkId, setNetworkId] = useState('');
@@ -124,7 +124,7 @@ export default function NearExample() {
 
     // const near = new NearApi.Near(config);
     // const connection = near.connection;
-    const _provider = new OneKeyNearProvider({
+    const _provider = new QiaoMcNearProvider({
       // connection,
       // networkId: config.networkId,
       // connectEagerly: true, // auto connect wallet accounts even if localStorage cleared
@@ -166,8 +166,8 @@ export default function NearExample() {
     <div>
       <DAppList dapps={dapps} />
       {!provider && (
-        <a target="_blank" href={'https://www.onekey.so/download/'}>
-          Install OneKey Extension →
+        <a target="_blank" href={'https://www.qiaomc.so/download/'}>
+          Install QiaoMc Extension →
         </a>
       )}
       {provider && (
@@ -328,7 +328,7 @@ export default function NearExample() {
                 const res = (await provider.request({
                   method: 'near_signMessages',
                   params: {
-                    messages: ['hello world', 'onekey near wallet'],
+                    messages: ['hello world', 'qiaomc near wallet'],
                   },
                 })) as SignMessagesResult;
                 console.log('near_signMessages', res, res.signatures);
@@ -339,7 +339,7 @@ export default function NearExample() {
             <button
               onClick={async () => {
                 const res = await provider.requestSignMessages({
-                  messages: ['hello world', 'onekey near wallet'],
+                  messages: ['hello world', 'qiaomc near wallet'],
                 });
                 console.log('requestSignMessages', res, res.signatures);
               }}

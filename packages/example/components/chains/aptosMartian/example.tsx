@@ -26,9 +26,9 @@ export default function Example() {
       inject: 'martian',
     },
     {
-      uuid: 'injected-onekey',
-      name: 'Injected OneKey',
-      inject: '$onekey.aptos',
+      uuid: 'injected-qiaomc',
+      name: 'Injected QiaoMc',
+      inject: '$qiaomc.aptos',
     },
   ]);
 
@@ -361,7 +361,7 @@ export default function Example() {
               value: JSON.stringify({
                 name: 'Collection 1',
                 description: 'Collection 1 description',
-                uri: 'https://onekey.so',
+                uri: 'https://qiaomc.so',
               }),
             },
           ]}

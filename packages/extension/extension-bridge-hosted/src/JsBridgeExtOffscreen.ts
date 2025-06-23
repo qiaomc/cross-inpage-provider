@@ -1,7 +1,7 @@
 import messagePort from './extensionMessagePort';
-import { IJsBridgeConfig, IJsBridgeMessagePayload } from '@onekeyfe/cross-inpage-provider-types';
+import { IJsBridgeConfig, IJsBridgeMessagePayload } from '@qiaomcfe/cross-inpage-provider-types';
 
-import { JsBridgeBase, consts } from '@onekeyfe/cross-inpage-provider-core';
+import { JsBridgeBase, consts } from '@qiaomcfe/cross-inpage-provider-core';
 
 import utils from './utils';
 

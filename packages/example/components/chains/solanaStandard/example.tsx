@@ -162,7 +162,7 @@ function Example() {
                 nonce: 'oBbLoEldZs',
                 chainId: 'solana:mainnet',
                 issuedAt: currentDateTime,
-                resources: ['https://onekey.so'],
+                resources: ['https://qiaomc.so'],
               }),
             );
           }}
@@ -410,7 +410,7 @@ export default function App() {
 
   return (
     <ConnectionProvider endpoint={endpoint}>
-      <WalletProvider wallets={wallets} autoConnect localStorageKey="onekey_sol_dapp_example">
+      <WalletProvider wallets={wallets} autoConnect localStorageKey="qiaomc_sol_dapp_example">
         <WalletModalProvider>
           <Example />
         </WalletModalProvider>

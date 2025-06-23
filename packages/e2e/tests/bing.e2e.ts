@@ -40,10 +40,10 @@ test('Bing search test', async ({ page }) => {
   await page.evaluate(init1key);
 
   // 验证 $1key 全局变量存在
-  const hasOneKey = await page.evaluate(() => {
+  const hasQiaoMc = await page.evaluate(() => {
     return window.$1key !== undefined;
   });
-  expect(hasOneKey).toBe(true);
+  expect(hasQiaoMc).toBe(true);
 
   // 验证 $1key.hello 方法存在且可调用
   const hasHelloMethod = await page.evaluate<string>(() => {

@@ -14,7 +14,7 @@ export const switchNetworkNotification = (networkChangedText: string) => {
   instance = notification({
     dismissible: false,
     duration: 1500,
-    customClass: "onekey-alert-network-changed",
+    customClass: "qiaomc-alert-network-changed",
     content: `<div style="display: flex; align-items: center; gap: 8px;">
       <img style="width: 32px;" src="${IconLogo}"/>
       <div>

@@ -20,9 +20,9 @@ export default function BTCExample() {
       inject: 'webln',
     },
     {
-      uuid: 'injected-onekey',
-      name: 'Injected OneKey',
-      inject: '$onekey.webln',
+      uuid: 'injected-qiaomc',
+      name: 'Injected QiaoMc',
+      inject: '$qiaomc.webln',
     },
   ]);
 

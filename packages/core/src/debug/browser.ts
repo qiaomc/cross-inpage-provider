@@ -285,8 +285,8 @@ async function load() {
 
 function customLocalStorage() {
   try {
-    if (typeof global !== 'undefined' && global.$$onekeyAppStorage) {
-      return global.$$onekeyAppStorage;
+    if (typeof global !== 'undefined' && global.$$qiaomcAppStorage) {
+      return global.$$qiaomcAppStorage;
     }
     // TVMLKit (Apple TV JS Runtime) does not have a window object, just localStorage in the global context
     // The Browser also has localStorage in the global context.
@@ -295,7 +295,7 @@ function customLocalStorage() {
     }
 
     console.warn(
-      'debugLogger init warning, neither `global.$$onekeyAppStorage` nor `window.localStorage` found.',
+      'debugLogger init warning, neither `global.$$qiaomcAppStorage` nor `window.localStorage` found.',
     );
     return {
       async getItem() {

@@ -1,5 +1,5 @@
 export interface IProviderApi {
-  isOneKey?: boolean;
+  isQiaoMc?: boolean;
   on(event: string, listener: (...args: any[]) => void): this;
   removeListener(event: string, listener: (...args: any[]) => void): this;
   requestAccounts(): Promise<string[]>;

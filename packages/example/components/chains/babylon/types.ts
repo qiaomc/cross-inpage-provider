@@ -1,4 +1,4 @@
-import type { BBNProviderCosmos } from '@onekeyfe/onekey-cosmos-provider';
+import type { BBNProviderCosmos } from '@qiaomcfe/qiaomc-cosmos-provider';
 
 export type IProviderApi = BBNProviderCosmos
 

@@ -20,9 +20,9 @@ export default function BTCExample() {
       inject: 'starcoin',
     },
     {
-      uuid: 'injected-onekey',
-      name: 'Injected OneKey',
-      inject: '$onekey.starcoin',
+      uuid: 'injected-qiaomc',
+      name: 'Injected QiaoMc',
+      inject: '$qiaomc.starcoin',
     },
   ]);
 

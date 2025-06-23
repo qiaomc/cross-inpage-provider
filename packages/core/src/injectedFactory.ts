@@ -5,7 +5,7 @@ function createCodeWithScriptTag({ code }: { code: string }): string {
     (function(){
       const s = document.createElement('script');
       s.setAttribute('async', 'false');
-      s.setAttribute('data-onekey-injected', 'true');
+      s.setAttribute('data-qiaomc-injected', 'true');
       s.textContent=${JSON.stringify(code)};
       (document.head || document.documentElement).appendChild(s);
       s.remove();
@@ -26,7 +26,7 @@ function injectCodeWithScriptTag({
     const s = document.createElement('script');
     s.removeAttribute('async');
     s.removeAttribute('defer');
-    s.setAttribute('data-onekey-injected', 'yes');
+    s.setAttribute('data-qiaomc-injected', 'yes');
     if (code) {
       s.textContent = code;
     }
@@ -47,8 +47,8 @@ function injectCodeWithScriptTag({
 
 function createCodeJsBridgeReceive(payloadStr: string): string {
   return `
-  if(window.$onekey && window.$onekey.jsBridge){
-    window.$onekey.jsBridge.receive(${JSON.stringify(payloadStr)});
+  if(window.$qiaomc && window.$qiaomc.jsBridge){
+    window.$qiaomc.jsBridge.receive(${JSON.stringify(payloadStr)});
   }
   void 0;
   `;

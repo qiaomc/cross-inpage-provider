@@ -1,7 +1,7 @@
 import type { PublicKey, Transaction, VersionedTransaction } from '@solana/web3.js';
 
 export interface IProviderApi {
-  isOneKey?: boolean;
+  isQiaoMc?: boolean;
   publicKey?: PublicKey;
   connect(): Promise<{
     publicKey: PublicKey;

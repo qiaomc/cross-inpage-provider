@@ -1,5 +1,5 @@
 import { createNewImageToContainer, hackConnectButton } from '../hackConnectButton';
-import { IInjectedProviderNames } from '@onekeyfe/cross-inpage-provider-types';
+import { IInjectedProviderNames } from '@qiaomcfe/cross-inpage-provider-types';
 import { WALLET_CONNECT_INFO } from '../consts';
 import domUtils from '../utils/utilsDomNodes';
 

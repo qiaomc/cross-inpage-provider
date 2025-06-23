@@ -225,7 +225,7 @@ export default {
       id: 'signMessage',
       name: 'Sign Message',
       value: JSON.stringify({
-        message: 'Hello OneKey NEO Wallet',
+        message: 'Hello QiaoMc NEO Wallet',
       }),
     },
   ],
@@ -234,7 +234,7 @@ export default {
       id: 'signMessageV2',
       name: 'Sign Message V2',
       value: JSON.stringify({
-        message: 'Hello OneKey NEO Wallet',
+        message: 'Hello QiaoMc NEO Wallet',
       }),
     },
   ],
@@ -243,7 +243,7 @@ export default {
       id: 'signMessageWithoutSalt',
       name: 'Sign Message Without Salt',
       value: JSON.stringify({
-        message: 'Hello OneKey NEO Wallet',
+        message: 'Hello QiaoMc NEO Wallet',
       }),
     },
   ],
@@ -252,7 +252,7 @@ export default {
       id: 'signMessageWithoutSalt',
       name: 'Sign Message Without Salt',
       value: JSON.stringify({
-        message: 'Hello OneKey NEO Wallet',
+        message: 'Hello QiaoMc NEO Wallet',
       }),
     },
   ],

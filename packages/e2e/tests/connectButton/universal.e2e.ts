@@ -1,15 +1,15 @@
-import { type IInjectedProviderNames } from '@onekeyfe/cross-inpage-provider-types';
+import { type IInjectedProviderNames } from '@qiaomcfe/cross-inpage-provider-types';
 import { expect, test } from '@playwright/test';
 import path from 'node:path';
 import { Locator } from 'playwright/test';
 
 import * as fs from 'fs';
 
-import { connectButtonData } from '@onekeyfe/inpage-providers-hub';
+import { connectButtonData } from '@qiaomcfe/inpage-providers-hub';
 
 const injectedCode = fs.readFileSync(
   path.resolve(
-    'node_modules/@onekeyfe/cross-inpage-provider-injected/dist/injected/injectedNative.js',
+    'node_modules/@qiaomcfe/cross-inpage-provider-injected/dist/injected/injectedNative.js',
   ),
   'utf-8',
 );

@@ -1,5 +1,5 @@
 export interface IEthereumProvider {
-  isOneKey?: boolean;
+  isQiaoMc?: boolean;
   isBitKeep?: boolean;
   enable: () => Promise<string[]>;
   request: (args: any) => Promise<any>;

@@ -1,5 +1,5 @@
 function isReplaced(ele?: HTMLElement | null) {
-  return Boolean(ele?.dataset['isOneKeyReplaced']);
+  return Boolean(ele?.dataset['isQiaoMcReplaced']);
 }
 function isNotReplaced(ele?: HTMLElement | null) {
   return !isReplaced(ele);
@@ -7,7 +7,7 @@ function isNotReplaced(ele?: HTMLElement | null) {
 function setIsReplaced(ele: HTMLElement | Element) {
   const htmlEle = ele as HTMLElement;
   if (htmlEle && htmlEle.dataset) {
-    htmlEle.dataset['isOneKeyReplaced'] = 'true';
+    htmlEle.dataset['isQiaoMcReplaced'] = 'true';
   }
 }
 function isInnerContentMatch(

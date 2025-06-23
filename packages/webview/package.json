@@ -1,11 +1,11 @@
 {
-	"name": "@onekeyfe/onekey-cross-webview",
-	"version": "2.2.30",
+	"name": "@qiaomcfe/qiaomc-cross-webview",
+	"version": "1.0.0",
 	"keywords": [
 		"cross-inpage-provider"
 	],
-	"author": "dev-fe@onekey.so",
-	"repository": "https://github.com/OneKeyHQ/cross-inpage-provider",
+	"author": "dev-fe@qiaomc.so",
+	"repository": "https://github.com/QiaoMcHQ/cross-inpage-provider",
 	"license": "Apache-2.0",
 	"publishConfig": {
 		"access": "public"
@@ -36,7 +36,7 @@
 		"react-native-webview": "^11.17.2"
 	},
 	"dependencies": {
-		"@onekeyfe/cross-inpage-provider-core": "2.2.30",
-		"@onekeyfe/cross-inpage-provider-types": "2.2.30"
+		"@qiaomcfe/cross-inpage-provider-core": "1.0.0",
+		"@qiaomcfe/cross-inpage-provider-types": "1.0.0"
 	}
 }

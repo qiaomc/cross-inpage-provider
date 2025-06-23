@@ -1,14 +1,14 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
-import { IJsBridgeMessagePayload, IJsonRpcRequest } from '@onekeyfe/cross-inpage-provider-types';
+import { IJsBridgeMessagePayload, IJsonRpcRequest } from '@qiaomcfe/cross-inpage-provider-types';
 import { JsBridgeBase } from './JsBridgeBase';
 import { consoleErrorInDev } from './loggers';
 import { ProviderBase } from './ProviderBase';
 
 function injectedProviderReceiveHandler(payload: IJsBridgeMessagePayload, bridge?: JsBridgeBase) {
   // ethereum, solana, conflux
-  const providerHub = bridge?.providersHub || window.$onekey;
+  const providerHub = bridge?.providersHub || window.$qiaomc;
 
   const providerName = payload.scope;
   const payloadData = payload.data as IJsonRpcRequest;

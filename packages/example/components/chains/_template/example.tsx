@@ -17,9 +17,9 @@ export default function Example() {
       inject: 'solana',
     },
     {
-      uuid: 'injected-onekey',
-      name: 'Injected OneKey',
-      inject: '$onekey.solana',
+      uuid: 'injected-qiaomc',
+      name: 'Injected QiaoMc',
+      inject: '$qiaomc.solana',
     },
   ]);
 

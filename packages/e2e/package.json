@@ -1,12 +1,12 @@
 {
   "private": true,
-  "name": "@onekeyfe/e2e",
-  "version": "2.2.30",
+  "name": "@qiaomcfe/e2e",
+  "version": "1.0.0",
   "keywords": [
     "cross-inpage-provider"
   ],
-  "author": "dev-fe@onekey.so",
-  "repository": "https://github.com/OneKeyHQ/cross-inpage-provider",
+  "author": "dev-fe@qiaomc.so",
+  "repository": "https://github.com/QiaoMcHQ/cross-inpage-provider",
   "license": "Apache-2.0",
   "publishConfig": {
     "access": "public"
@@ -31,9 +31,9 @@
     "test:ui": "yarn env && npx playwright test --ui "
   },
   "dependencies": {
-    "@onekeyfe/cross-inpage-provider-injected": "2.2.30",
-    "@onekeyfe/cross-inpage-provider-types": "2.2.30",
-    "@onekeyfe/inpage-providers-hub": "2.2.30",
+    "@qiaomcfe/cross-inpage-provider-injected": "1.0.0",
+    "@qiaomcfe/cross-inpage-provider-types": "1.0.0",
+    "@qiaomcfe/inpage-providers-hub": "1.0.0",
     "lodash-es": "^4.17.21"
   },
   "devDependencies": {

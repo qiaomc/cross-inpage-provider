@@ -1,45 +1,45 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
-import { JsBridgeBase } from '@onekeyfe/cross-inpage-provider-core';
+import { JsBridgeBase } from '@qiaomcfe/cross-inpage-provider-core';
 import {
   ProviderEthereum,
   shimWeb3,
   registerEIP6963Provider,
   MetaMaskSDK,
   METAMASK_UUID
-} from '@onekeyfe/onekey-eth-provider';
-import { ProviderPrivate } from '@onekeyfe/onekey-private-provider';
-import { ProviderSolana, registerSolanaWallet, WalletIcon } from '@onekeyfe/onekey-solana-provider';
+} from '@qiaomcfe/qiaomc-eth-provider';
+import { ProviderPrivate } from '@qiaomcfe/qiaomc-private-provider';
+import { ProviderSolana, registerSolanaWallet, WalletIcon } from '@qiaomcfe/qiaomc-solana-provider';
 import {
   ProviderAptos,
   ProviderAptosMartian,
   registerAptosWallet,
-} from '@onekeyfe/onekey-aptos-provider';
-import { ProviderConflux } from '@onekeyfe/onekey-conflux-provider';
-import { ProviderAlph, registerAlephiumProvider } from '@onekeyfe/onekey-alph-provider';
-import { ProviderTron } from '@onekeyfe/onekey-tron-provider';
-import { ProviderCardano, defineWindowCardanoProperty } from '@onekeyfe/onekey-cardano-provider';
-import { ProviderCosmos, BBNProviderCosmos } from '@onekeyfe/onekey-cosmos-provider';
-import { ProviderPolkadot, registerPolkadot } from '@onekeyfe/onekey-polkadot-provider';
+} from '@qiaomcfe/qiaomc-aptos-provider';
+import { ProviderConflux } from '@qiaomcfe/qiaomc-conflux-provider';
+import { ProviderAlph, registerAlephiumProvider } from '@qiaomcfe/qiaomc-alph-provider';
+import { ProviderTron } from '@qiaomcfe/qiaomc-tron-provider';
+import { ProviderCardano, defineWindowCardanoProperty } from '@qiaomcfe/qiaomc-cardano-provider';
+import { ProviderCosmos, BBNProviderCosmos } from '@qiaomcfe/qiaomc-cosmos-provider';
+import { ProviderPolkadot, registerPolkadot } from '@qiaomcfe/qiaomc-polkadot-provider';
 import {
   defineWindowProperty,
   checkWalletSwitchEnable,
-} from '@onekeyfe/cross-inpage-provider-core';
-import { ProviderSui, registerSuiWallet } from '@onekeyfe/onekey-sui-provider';
-import { ProviderBfc, registerBfcWallet } from '@onekeyfe/onekey-bfc-provider';
-import { ProviderWebln } from '@onekeyfe/onekey-webln-provider';
-import { ProviderScdo } from '@onekeyfe/onekey-scdo-provider';
-import { createTonProviderOpenMask, ProviderTon } from '@onekeyfe/onekey-ton-provider';
-import { ProviderNostr } from '@onekeyfe/onekey-nostr-provider';
-import { ProviderBtc, ProviderBtcWallet } from '@onekeyfe/onekey-btc-provider';
-import { ProviderAlgo } from '@onekeyfe/onekey-algo-provider';
-import { ProviderNeo, NEOLineN3, emitNeoReadyEvent } from '@onekeyfe/onekey-neo-provider';
+} from '@qiaomcfe/cross-inpage-provider-core';
+import { ProviderSui, registerSuiWallet } from '@qiaomcfe/qiaomc-sui-provider';
+import { ProviderBfc, registerBfcWallet } from '@qiaomcfe/qiaomc-bfc-provider';
+import { ProviderWebln } from '@qiaomcfe/qiaomc-webln-provider';
+import { ProviderScdo } from '@qiaomcfe/qiaomc-scdo-provider';
+import { createTonProviderOpenMask, ProviderTon } from '@qiaomcfe/qiaomc-ton-provider';
+import { ProviderNostr } from '@qiaomcfe/qiaomc-nostr-provider';
+import { ProviderBtc, ProviderBtcWallet } from '@qiaomcfe/qiaomc-btc-provider';
+import { ProviderAlgo } from '@qiaomcfe/qiaomc-algo-provider';
+import { ProviderNeo, NEOLineN3, emitNeoReadyEvent } from '@qiaomcfe/qiaomc-neo-provider';
 import { hackAllConnectButtons } from './connectButtonHack';
 import { detectWebsiteRiskLevel, listenPageFocus } from './detectRiskWebsite';
 import { injectFloatingButton } from './floatingButton';
 import { WALLET_CONNECT_INFO } from './connectButtonHack/consts';
 
-export type IWindowOneKeyHub = {
+export type IWindowQiaoMcHub = {
   debugLogger?: any;
   jsBridge?: JsBridgeBase;
   ethereum?: ProviderEthereum;
@@ -81,11 +81,11 @@ export type IWindowOneKeyHub = {
 function injectWeb3Provider({
   showFloatingButton = false,
 }: { showFloatingButton?: boolean } = {}): unknown {
-  if (!window?.$onekey?.jsBridge) {
-    throw new Error('OneKey jsBridge not found.');
+  if (!window?.$qiaomc?.jsBridge) {
+    throw new Error('QiaoMc jsBridge not found.');
   }
 
-  const bridge: JsBridgeBase = window?.$onekey?.jsBridge;
+  const bridge: JsBridgeBase = window?.$qiaomc?.jsBridge;
 
   const ethereum = new ProviderEthereum({
     bridge,
@@ -135,7 +135,7 @@ function injectWeb3Provider({
 
   // eslint-disable-next-line @typescript-eslint/no-unsafe-call
   const bbnCosmos = new BBNProviderCosmos(cosmos, {
-    logo: WALLET_CONNECT_INFO.onekey.icon,
+    logo: WALLET_CONNECT_INFO.qiaomc.icon,
   });
 
   const polkadot = new ProviderPolkadot({
@@ -161,8 +161,8 @@ function injectWeb3Provider({
   NEOLineN3.instance = neo;
 
   // providerHub
-  const $onekey = {
-    ...window.$onekey,
+  const $qiaomc = {
+    ...window.$qiaomc,
     jsBridge: bridge,
     $private,
     ethereum,
@@ -188,12 +188,12 @@ function injectWeb3Provider({
     neo: NEOLineN3,
   };
 
-  defineWindowProperty('$onekey', $onekey, { enumerable: true, alwaysInject: true });
+  defineWindowProperty('$qiaomc', $qiaomc, { enumerable: true, alwaysInject: true });
 
   defineWindowProperty('ethereum', ethereum);
-  // OneKey Ethereum EIP6963 Provider
+  // QiaoMc Ethereum EIP6963 Provider
   registerEIP6963Provider({
-    image: WALLET_CONNECT_INFO.onekey.icon,
+    image: WALLET_CONNECT_INFO.qiaomc.icon,
     provider: ethereum,
   });
 
@@ -223,7 +223,7 @@ function injectWeb3Provider({
   defineWindowProperty('tronOfTronLink', tron);
   defineWindowProperty('suiWallet', sui);
   defineWindowProperty('bfcWallet', bfc);
-  defineWindowProperty('onekeyTonWallet', {
+  defineWindowProperty('qiaomcTonWallet', {
     tonconnect,
   });
   defineWindowProperty('openmask', {
@@ -275,21 +275,21 @@ function injectWeb3Provider({
   // TODO use initializeInpageProvider.ts
   window.dispatchEvent(new Event('ethereum#initialized'));
 
-  // OneKey Solana Standard Wallet
+  // QiaoMc Solana Standard Wallet
   registerSolanaWallet(solana, {
-    icon: WALLET_CONNECT_INFO.onekey.icon as WalletIcon,
+    icon: WALLET_CONNECT_INFO.qiaomc.icon as WalletIcon,
   });
 
-  // OneKey Sui Standard Wallet
+  // QiaoMc Sui Standard Wallet
   registerSuiWallet(sui, {
-    logo: WALLET_CONNECT_INFO.onekey.icon,
+    logo: WALLET_CONNECT_INFO.qiaomc.icon,
   });
 
-  // OneKey Aptos Standard Wallet
+  // QiaoMc Aptos Standard Wallet
   // eslint-disable-next-line @typescript-eslint/no-unsafe-call
   registerAptosWallet(martian, {
-    name: WALLET_CONNECT_INFO.onekey.text,
-    logo: WALLET_CONNECT_INFO.onekey.icon as WalletIcon,
+    name: WALLET_CONNECT_INFO.qiaomc.text,
+    logo: WALLET_CONNECT_INFO.qiaomc.icon as WalletIcon,
   });
 
   // Override Petra Aptos Standard Wallet
@@ -315,16 +315,16 @@ function injectWeb3Provider({
   if (checkWalletSwitchEnable()) {
     registerSuiWallet(sui, {
       name: 'Sui Wallet',
-      logo: WALLET_CONNECT_INFO.onekey.icon,
+      logo: WALLET_CONNECT_INFO.qiaomc.icon,
     });
   }
 
-  // OneKey BFC Standard Wallet
+  // QiaoMc BFC Standard Wallet
   registerBfcWallet(bfc, {
-    logo: WALLET_CONNECT_INFO.onekey.icon,
+    logo: WALLET_CONNECT_INFO.qiaomc.icon,
   });
 
-  // OneKey Polkadot Standard Wallet
+  // QiaoMc Polkadot Standard Wallet
   registerPolkadot(polkadot);
 
   // Override Polkadot Standard Wallet
@@ -340,6 +340,6 @@ function injectWeb3Provider({
     void listenPageFocus();
   }, 1000);
 
-  return $onekey;
+  return $qiaomc;
 }
 export { injectWeb3Provider };

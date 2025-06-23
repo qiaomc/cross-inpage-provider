@@ -1,4 +1,4 @@
-const DEFAULT_API = 'https://api.onekeytest.com'
+const DEFAULT_API = 'https://api.qiaomctest.com'
 
 function getApiKey(apiKey:string, fromBase64 = true) {
     if (fromBase64) {

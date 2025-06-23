@@ -125,9 +125,9 @@ export default function BTCExample() {
       inject: 'conflux',
     },
     {
-      uuid: 'injected-onekey',
-      name: 'Injected OneKey',
-      inject: '$onekey.conflux',
+      uuid: 'injected-qiaomc',
+      name: 'Injected QiaoMc',
+      inject: '$qiaomc.conflux',
     },
   ]);
 

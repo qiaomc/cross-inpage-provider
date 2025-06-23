@@ -10,11 +10,11 @@ import React, {
 } from 'react';
 
 import { LoadURLOptions } from 'electron';
-import { consts } from '@onekeyfe/cross-inpage-provider-core';
+import { consts } from '@qiaomcfe/cross-inpage-provider-core';
 import {
   IElectronWebView,
   InpageProviderWebViewProps,
-} from '@onekeyfe/cross-inpage-provider-types';
+} from '@qiaomcfe/cross-inpage-provider-types';
 
 import { JsBridgeDesktopHost } from './JsBridgeDesktopHost';
 import { useIsIpcReady } from './useIsIpcReady';
@@ -30,7 +30,7 @@ const isDev = process.env.NODE_ENV !== 'production';
 const isBrowser = true;
 
 function usePreloadJsUrl() {
-  const { preloadJsUrl } = window.ONEKEY_DESKTOP_GLOBALS ?? {};
+  const { preloadJsUrl } = window.QIAOMC_DESKTOP_GLOBALS ?? {};
   useEffect(() => {
     if (preloadJsUrl) {
       return;
@@ -38,7 +38,7 @@ function usePreloadJsUrl() {
     const timer = setTimeout(() => {
       if (!preloadJsUrl) {
         console.error(`Webview render failed:
-      Please send messages of channel SET_ONEKEY_DESKTOP_GLOBALS at app start
+      Please send messages of channel SET_QIAOMC_DESKTOP_GLOBALS at app start
       `);
       }
     }, 3000);

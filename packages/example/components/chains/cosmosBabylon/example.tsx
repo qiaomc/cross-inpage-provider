@@ -50,9 +50,9 @@ export default function Example() {
       inject: 'bbnwallet',
     },
     {
-      uuid: 'injected-onekey',
-      name: 'Injected OneKey',
-      inject: '$onekey.bbnCosmos',
+      uuid: 'injected-qiaomc',
+      name: 'Injected QiaoMc',
+      inject: '$qiaomc.bbnCosmos',
     },
   ]);
 

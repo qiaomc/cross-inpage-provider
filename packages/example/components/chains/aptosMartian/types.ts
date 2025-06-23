@@ -1,4 +1,4 @@
-import type { ProviderAptosMartian } from '@onekeyfe/onekey-aptos-provider';
+import type { ProviderAptosMartian } from '@qiaomcfe/qiaomc-aptos-provider';
 
 export type IProviderApi = ProviderAptosMartian
 

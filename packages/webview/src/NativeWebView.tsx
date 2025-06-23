@@ -12,10 +12,10 @@ import type { ViewStyle } from 'react-native';
 
 import { WebView, WebViewProps } from 'react-native-webview';
 
-import { appDebugLogger } from '@onekeyfe/cross-inpage-provider-core';
+import { appDebugLogger } from '@qiaomcfe/cross-inpage-provider-core';
 
 import { JsBridgeNativeHost } from './JsBridgeNativeHost';
-import { InpageProviderWebViewProps } from '@onekeyfe/cross-inpage-provider-types';
+import { InpageProviderWebViewProps } from '@qiaomcfe/cross-inpage-provider-types';
 
 import { IWebViewWrapperRef } from './useWebViewBridge';
 

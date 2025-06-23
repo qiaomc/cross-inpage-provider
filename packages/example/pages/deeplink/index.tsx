@@ -62,31 +62,31 @@ export default function DeepLinkTest() {
         <ul className="list-disc pl-5">
           {[
             {
-              href: `https://app.onekey.so/wc/connect?uri=${uriEncoded}`,
+              href: `https://app.qiaomc.so/wc/connect?uri=${uriEncoded}`,
               text: 'UniversalLink (full link)',
             },
             {
-              href: 'https://app.onekey.so/account/0xA9b4d559A98ff47C83B74522b7986146538cD4dF',
+              href: 'https://app.qiaomc.so/account/0xA9b4d559A98ff47C83B74522b7986146538cD4dF',
               text: 'UniversalLink (account)',
             },
             { href: 'wc://', text: 'wc:// (empty link)' },
-            { href: 'onekey-wallet://', text: 'onekey-wallet:// (empty link)' },
+            { href: 'qiaomc-wallet://', text: 'qiaomc-wallet:// (empty link)' },
             { href: uri, text: 'wc: (full link)' },
             {
-              href: `onekey-wallet:/wc?uri=${uriEncoded}`,
-              text: 'onekey-wallet:/wc?uri= (full link)',
+              href: `qiaomc-wallet:/wc?uri=${uriEncoded}`,
+              text: 'qiaomc-wallet:/wc?uri= (full link)',
             },
             {
-              href: `onekey-wallet://wc?uri=${uriEncoded}`,
-              text: 'onekey-wallet://wc?uri= (full link)',
+              href: `qiaomc-wallet://wc?uri=${uriEncoded}`,
+              text: 'qiaomc-wallet://wc?uri= (full link)',
             },
             {
-              href: `onekey-wallet:///wc?uri=${uriEncoded}`,
-              text: 'onekey-wallet:///wc?uri= (full link)',
+              href: `qiaomc-wallet:///wc?uri=${uriEncoded}`,
+              text: 'qiaomc-wallet:///wc?uri= (full link)',
             },
             {
-              href: `onekey-wallet:wc?uri=${uriEncoded}`,
-              text: 'onekey-wallet:wc?uri= (full link)',
+              href: `qiaomc-wallet:wc?uri=${uriEncoded}`,
+              text: 'qiaomc-wallet:wc?uri= (full link)',
             },
             { href: `cryptowallet://wc?uri=${uriEncoded}`, text: 'cryptowallet (full link)' },
             { href: `tpoutside://wc?uri=${uriEncoded}`, text: 'tpoutside (full link)' },

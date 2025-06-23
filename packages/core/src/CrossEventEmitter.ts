@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-member-access,@typescript-eslint/ban-ts-comment,  @typescript-eslint/no-unsafe-call, @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-argument
  */
 // @ts-ignore
-import EventEmitterBase from '@onekeyfe/cross-inpage-provider-events';
+import EventEmitterBase from '@qiaomcfe/cross-inpage-provider-events';
 import type { EventEmitter as INodeEventEmitter } from 'events';
 
 type Handler = (...args: any[]) => void;

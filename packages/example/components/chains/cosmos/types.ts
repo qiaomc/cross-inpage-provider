@@ -1,4 +1,4 @@
-import type { ProviderCosmos } from '@onekeyfe/onekey-cosmos-provider';
+import type { ProviderCosmos } from '@qiaomcfe/qiaomc-cosmos-provider';
 
 export type IProviderApi = ProviderCosmos
 

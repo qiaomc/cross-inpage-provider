@@ -1,5 +1,5 @@
 import { JsBridgeExtBackground } from '../JsBridgeExtBackground';
-import { IJsBridgeReceiveHandler } from '@onekeyfe/cross-inpage-provider-types';
+import { IJsBridgeReceiveHandler } from '@qiaomcfe/cross-inpage-provider-types';
 
 function createHostBridge({ receiveHandler }: { receiveHandler: IJsBridgeReceiveHandler }) {
   const bridge = new JsBridgeExtBackground({

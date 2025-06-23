@@ -6,7 +6,7 @@ export default {
       value: JSON.stringify({
         created_at: 1700000000,
         kind: 1,
-        content: 'OneKey 🚀',
+        content: 'QiaoMc 🚀',
         tags: [],
       }),
     },

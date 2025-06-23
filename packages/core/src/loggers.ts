@@ -1,12 +1,12 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
-import { ConsoleLike, IDebugLogger } from '@onekeyfe/cross-inpage-provider-types';
+import { ConsoleLike, IDebugLogger } from '@qiaomcfe/cross-inpage-provider-types';
 // @ts-ignore
 import { DEBUG_LOGGER_STORAGE_KEY } from './consts';
 import { CrossEventEmitter } from './CrossEventEmitter';
 import createDebugAsync from './debug';
 
 // enable debugLogger:
-//    localStorage.setItem('$$ONEKEY_DEBUG_LOGGER', '*');
+//    localStorage.setItem('$$QIAOMC_DEBUG_LOGGER', '*');
 
 function consoleErrorInDev(...args: unknown[]) {
   const loggerConfig =

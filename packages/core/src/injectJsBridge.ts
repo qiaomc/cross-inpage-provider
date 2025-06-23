@@ -20,13 +20,13 @@ function injectJsBridge(bridgeCreator: () => JsBridgeBase | unknown): JsBridgeBa
   //  make cloudfare dead loop and make zhihu.com search functionally down
   // fixGlobalShim();
 
-  if (!window?.$onekey?.jsBridge) {
-    window.$onekey = window.$onekey || {};
-    window.$onekey.jsBridge = bridgeCreator();
+  if (!window?.$qiaomc?.jsBridge) {
+    window.$qiaomc = window.$qiaomc || {};
+    window.$qiaomc.jsBridge = bridgeCreator();
     commonLogger.debug('JsBridge injected success!', performance.now());
   }
 
-  return window.$onekey.jsBridge as JsBridgeBase;
+  return window.$qiaomc.jsBridge as JsBridgeBase;
 }
 
 export { injectJsBridge };

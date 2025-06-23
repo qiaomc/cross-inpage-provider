@@ -106,9 +106,9 @@ export default function Example() {
       inject: 'tronLink',
     },
     {
-      uuid: 'injected-onekey',
-      name: 'Injected OneKey',
-      inject: '$onekey.tron',
+      uuid: 'injected-qiaomc',
+      name: 'Injected QiaoMc',
+      inject: '$qiaomc.tron',
     },
   ]);
 

@@ -40,8 +40,8 @@ export default function Document() {
         <script
           dangerouslySetInnerHTML={{
             __html: `
-            if(window.$onekey && window.$onekey.ethereum){
-              window.$onekey.ethereum.request({ method: 'net_version' }).then((res) => {
+            if(window.$qiaomc && window.$qiaomc.ethereum){
+              window.$qiaomc.ethereum.request({ method: 'net_version' }).then((res) => {
                 console.log('Dom onload check:   EVM net_version=',res);
               });
             }

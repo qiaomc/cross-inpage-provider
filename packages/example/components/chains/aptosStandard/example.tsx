@@ -347,7 +347,7 @@ function Example() {
 
         <ApiPayload
           title="signAndSubmitTransaction Encode Argument"
-          description="Encode Argument 测试 (OneKey、OKX、MizuWallet 等都不支持)"
+          description="Encode Argument 测试 (QiaoMc、OKX、MizuWallet 等都不支持)"
           presupposeParams={[
             {
               id: 'sender',
@@ -491,7 +491,7 @@ export default function App() {
           network: Network.MAINNET,
         }}
         // @ts-expect-error
-        optInWallets={['Petra', 'OneKey', 'OKX Wallet', 'Nightly', 'Mizu Wallet', 'Pontem Wallet']}
+        optInWallets={['Petra', 'QiaoMc', 'OKX Wallet', 'Nightly', 'Mizu Wallet', 'Pontem Wallet']}
         onError={(error) => {
           // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
           console.log('error', error);

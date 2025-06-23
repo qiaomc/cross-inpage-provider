@@ -3,7 +3,7 @@ import {
   detectQrcodeFromSvg,
   hackConnectButton,
 } from '../hackConnectButton';
-import { IInjectedProviderNames } from '@onekeyfe/cross-inpage-provider-types';
+import { IInjectedProviderNames } from '@qiaomcfe/cross-inpage-provider-types';
 import { WALLET_CONNECT_INFO } from '../consts';
 
 export default () => hackConnectButton({
@@ -66,12 +66,12 @@ export default () => hackConnectButton({
         | HTMLOrSVGImageElement
         | undefined;
       if (qrcodeSvg) {
-        if (qrcodeSvg.classList.contains('isOneKeyReplaced')) {
+        if (qrcodeSvg.classList.contains('isQiaoMcReplaced')) {
           return;
         }
         // should add white bg color for qrcode scan
         qrcodeSvg.style.backgroundColor = 'white';
-        qrcodeSvg.classList.add('isOneKeyReplaced');
+        qrcodeSvg.classList.add('isQiaoMcReplaced');
         const uri = await detectQrcodeFromSvg({ img: qrcodeSvg });
         if (process.env.NODE_ENV !== 'production') {
           console.log('indexcoop replaceWalletConnectQrcode >>>>', { uri });

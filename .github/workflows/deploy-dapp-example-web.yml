@@ -9,7 +9,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     env:
-      TEST_ENDPOINT: dapp-example.onekeytest.com
+      TEST_ENDPOINT: dapp-example.qiaomctest.com
     steps:
       - uses: actions/checkout@v4
 

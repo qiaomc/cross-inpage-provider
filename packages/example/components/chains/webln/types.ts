@@ -10,7 +10,7 @@ export interface GetInfoResponse {
 }
 
 export interface IProviderApi {
-  isOneKey?: boolean;
+  isQiaoMc?: boolean;
   on(event: string, listener: (...args: any[]) => void): this;
   off(event: string, listener: (...args: any[]) => void): this;
   enable(): Promise<void>;

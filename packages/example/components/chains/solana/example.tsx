@@ -26,9 +26,9 @@ export default function Example() {
       inject: 'solana',
     },
     {
-      uuid: 'injected-onekey',
-      name: 'Injected OneKey',
-      inject: '$onekey.solana',
+      uuid: 'injected-qiaomc',
+      name: 'Injected QiaoMc',
+      inject: '$qiaomc.solana',
     },
     {
       uuid: 'injected-phantom',
@@ -184,7 +184,7 @@ export default function Example() {
         />
           <ApiPayload
           title="solSignOffchainMessage"
-          description="签名消息(OneKey 私有方法)"
+          description="签名消息(QiaoMc 私有方法)"
           presupposeParams={params.signMessage}
           onExecute={async (request: string) => {
             return await provider?.solSignOffchainMessage(Buffer.from(request, 'utf8'));

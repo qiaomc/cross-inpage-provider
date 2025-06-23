@@ -58,7 +58,7 @@ export function checkWalletSwitchEnable() {
     }
     if (!walletInfoLocal?.isDefaultWallet) {
       if (process.env.NODE_ENV !== 'production') {
-        console.log('OneKey is not default wallet');
+        console.log('QiaoMc is not default wallet');
       }
       return false;
     }
@@ -80,7 +80,7 @@ export function checkWalletSwitchEnable() {
 }
 
 export function checkEnableDefineProperty(property: string) {
-  if (property === '$onekey') return false;
+  if (property === '$qiaomc') return false;
   try {
     const walletInfoLocalStr = localStorage.getItem(WALLET_INFO_LOACAL_KEY_V5);
     const walletInfoLocal = walletInfoLocalStr ? JSON.parse(walletInfoLocalStr) : null;

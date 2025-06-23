@@ -24,9 +24,9 @@ export default function BTCExample() {
       inject: 'btcwallet',
     },
     {
-      uuid: 'injected-onekey',
-      name: 'Injected OneKey',
-      inject: '$onekey.btcwallet',
+      uuid: 'injected-qiaomc',
+      name: 'Injected QiaoMc',
+      inject: '$qiaomc.btcwallet',
     },
   ]);
 

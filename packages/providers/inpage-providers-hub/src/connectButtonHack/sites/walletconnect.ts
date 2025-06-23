@@ -4,17 +4,17 @@ import {
   detectQrcodeFromSvg,
   hackConnectButton,
 } from '../hackConnectButton';
-import { IInjectedProviderNames } from '@onekeyfe/cross-inpage-provider-types';
+import { IInjectedProviderNames } from '@qiaomcfe/cross-inpage-provider-types';
 import { WALLET_CONNECT_INFO } from '../consts';
-import type { IWindowOneKeyHub } from '../../injectWeb3Provider';
-import { commonLogger } from '@onekeyfe/cross-inpage-provider-core';
+import type { IWindowQiaoMcHub } from '../../injectWeb3Provider';
+import { commonLogger } from '@qiaomcfe/cross-inpage-provider-core';
 
-const onekeyBtnBg = 'rgb(0, 184, 18)';
+const qiaomcBtnBg = 'rgb(0, 184, 18)';
 function setOnClickToConnectWallet({ element, uri }: { element: HTMLElement; uri: string }) {
   element.onclick = (e) => {
     e.preventDefault();
     // eslint-disable-next-line @typescript-eslint/no-unsafe-call,@typescript-eslint/no-unsafe-member-access
-    void window.$onekey?.$private?.request({
+    void window.$qiaomc?.$private?.request({
       method: 'wallet_connectToWalletConnect',
       params: { uri },
     });
@@ -26,12 +26,12 @@ export default () => hackConnectButton({
   urls: ['*'],
   providers: [IInjectedProviderNames.ethereum],
   replaceMethod() {
-    // $onekey.$walletInfo.platformEnv.isExtension
-    const onekeyHub = window.$onekey as IWindowOneKeyHub | undefined;
-    if (!onekeyHub || !onekeyHub.$walletInfo || !onekeyHub.$private) {
+    // $qiaomc.$walletInfo.platformEnv.isExtension
+    const qiaomcHub = window.$qiaomc as IWindowQiaoMcHub | undefined;
+    if (!qiaomcHub || !qiaomcHub.$walletInfo || !qiaomcHub.$private) {
       return;
     }
-    const { isExtension, isDesktop, isNative } = onekeyHub.$walletInfo.platformEnv;
+    const { isExtension, isDesktop, isNative } = qiaomcHub.$walletInfo.platformEnv;
     const replaceFunc = async ({
       findName,
       icon,
@@ -62,12 +62,12 @@ export default () => hackConnectButton({
         if (!btn) {
           return;
         }
-        if (btn.dataset['isOneKeyReplaced']) {
+        if (btn.dataset['isQiaoMcReplaced']) {
           return;
         }
-        btn.dataset['isOneKeyReplaced'] = 'true';
+        btn.dataset['isQiaoMcReplaced'] = 'true';
         btn.innerText = `${btn.innerText} ${text}`;
-        btn.style.backgroundColor = onekeyBtnBg;
+        btn.style.backgroundColor = qiaomcBtnBg;
         setOnClickToConnectWallet({
           element: btn,
           uri: btn.href,
@@ -106,7 +106,7 @@ export default () => hackConnectButton({
           return;
         }
         const newItemAdded = parent.querySelector(
-          '.isOneKeyReplaced.walletconnect-connect__button__icon_anchor',
+          '.isQiaoMcReplaced.walletconnect-connect__button__icon_anchor',
         ) as HTMLElement | undefined;
         if (newItemAdded) {
           return;
@@ -140,11 +140,11 @@ export default () => hackConnectButton({
           }
           if (newItemImg) {
             newItemImg.style.backgroundImage = `url(${icon || ''})`;
-            newItemImg.style.backgroundColor = onekeyBtnBg;
+            newItemImg.style.backgroundColor = qiaomcBtnBg;
           }
-          newItem.classList.add('isOneKeyReplaced');
+          newItem.classList.add('isQiaoMcReplaced');
           // TODO use universal link
-          newItem.href = `onekey-wallet:///wc?uri=${encodeURIComponent(uri)}`;
+          newItem.href = `qiaomc-wallet:///wc?uri=${encodeURIComponent(uri)}`;
           if (shouldHideOtherWallets) {
             setOnClickToConnectWallet({
               element: newItem,
@@ -183,12 +183,12 @@ export default () => hackConnectButton({
       const svgQrcode = headerNextSibling?.querySelector('svg.walletconnect-qrcode__image');
       if (svgQrcode) {
         const qrcodeContainer = headerNextSibling;
-        if (qrcodeContainer.dataset['isOneKeyReplaced']) {
+        if (qrcodeContainer.dataset['isQiaoMcReplaced']) {
           return;
         }
 
         // starting hack
-        qrcodeContainer.dataset['isOneKeyReplaced'] = 'true';
+        qrcodeContainer.dataset['isQiaoMcReplaced'] = 'true';
         qrcodeContainer.style.position = 'relative';
         qrcodeContainer.style.display = 'flex';
         qrcodeContainer.style.flexDirection = 'column';
@@ -235,8 +235,8 @@ export default () => hackConnectButton({
 
     void replaceFunc({
       findName: 'WalletConnect',
-      icon: WALLET_CONNECT_INFO.onekey.icon,
-      text: WALLET_CONNECT_INFO.onekey.text,
+      icon: WALLET_CONNECT_INFO.qiaomc.icon,
+      text: WALLET_CONNECT_INFO.qiaomc.text,
     });
   },
 });

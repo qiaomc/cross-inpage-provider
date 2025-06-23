@@ -1,5 +1,5 @@
 export interface IProviderApi {
-  isOneKey?: boolean;
+  isQiaoMc?: boolean;
   enable(): Promise<string[]>;
   isConnected(): Promise<boolean>;
   on(event: string, listener: (...args: any[]) => void): void;

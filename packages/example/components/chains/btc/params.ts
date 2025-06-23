@@ -63,7 +63,7 @@ export default {
       id: 'signMessage bip322-simple',
       name: 'SignMessage Bip322-Simple',
       value: JSON.stringify({
-        msg: 'hello onekey!',
+        msg: 'hello qiaomc!',
         type: 'bip322-simple',
       }),
     },

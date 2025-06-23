@@ -25,9 +25,9 @@ export default function BTCExample() {
       inject: 'unisat',
     },
     {
-      uuid: 'injected-onekey',
-      name: 'Injected OneKey',
-      inject: '$onekey.btc',
+      uuid: 'injected-qiaomc',
+      name: 'Injected QiaoMc',
+      inject: '$qiaomc.btc',
     },
   ]);
 

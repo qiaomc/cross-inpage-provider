@@ -21,9 +21,9 @@ export default function Example() {
       inject: 'nostr',
     },
     {
-      uuid: 'injected-onekey',
-      name: 'Injected OneKey',
-      inject: '$onekey.nostr',
+      uuid: 'injected-qiaomc',
+      name: 'Injected QiaoMc',
+      inject: '$qiaomc.nostr',
     },
   ]);
 

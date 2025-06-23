@@ -17,9 +17,9 @@ export default function Example() {
       inject: 'algorand',
     },
     {
-      uuid: 'injected-onekey',
-      name: 'Injected OneKey',
-      inject: '$onekey.algorand',
+      uuid: 'injected-qiaomc',
+      name: 'Injected QiaoMc',
+      inject: '$qiaomc.algorand',
     },
   ]);
 

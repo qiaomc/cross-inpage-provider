@@ -2,7 +2,7 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
 import { Console, Hook, Unhook } from 'console-feed';
-import { JsBridgeBase } from '@onekeyfe/cross-inpage-provider-core';
+import { JsBridgeBase } from '@qiaomcfe/cross-inpage-provider-core';
 import { isString } from 'lodash';
 import { Button } from './ui/button';
 import { Checkbox } from './ui/checkbox';
@@ -13,7 +13,7 @@ function loadLoggersConfig() {
   if (typeof window === 'undefined') {
     return;
   }
-  const config = localStorage.getItem('$$ONEKEY_DEBUG_LOGGER') || '';
+  const config = localStorage.getItem('$$QIAOMC_DEBUG_LOGGER') || '';
   config.split(',').map((name) => {
     name = name ? name.trim() : '';
     if (name) {
@@ -85,7 +85,7 @@ export const LogsContainer = ({ bridge }: { bridge?: JsBridgeBase } = {}) => {
                   // @ts-ignore
                   loggers[name] = Boolean(checked);
                   // eslint-disable-next-line @typescript-eslint/no-unsafe-call,@typescript-eslint/no-unsafe-member-access,@typescript-eslint/no-unsafe-assignment
-                  const _bridge = bridge ?? window?.$onekey?.jsBridge ?? window?.hostBridge;
+                  const _bridge = bridge ?? window?.$qiaomc?.jsBridge ?? window?.hostBridge;
                   // eslint-disable-next-line @typescript-eslint/no-unsafe-call,@typescript-eslint/no-unsafe-member-access
                   _bridge?.debugLogger?._debug?.enable(
                     Object.entries(loggers)

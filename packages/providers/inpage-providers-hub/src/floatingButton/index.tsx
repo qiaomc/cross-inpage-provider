@@ -53,7 +53,7 @@ const textStyle = {
   marginLeft: '8px',
 };
 
-const containerId = 'onekey-floating-widget';
+const containerId = 'qiaomc-floating-widget';
 
 const removeIcon = () => {
   document.getElementById(containerId)?.remove();
@@ -78,7 +78,7 @@ function CloseDialog({ onClose, side }: { onClose: () => void; side: 'left' | 'r
   useOutsideClick(dialogRef, onClose);
   const handleDisable = useCallback(() => {
     void (
-      window.$onekey as {
+      window.$qiaomc as {
         $private: {
           request: (arg: { method: string }) => Promise<void>;
         };
@@ -90,7 +90,7 @@ function CloseDialog({ onClose, side }: { onClose: () => void; side: 'left' | 'r
   }, [])
   const handleHideOnSite = useCallback(() => {
     void (
-      window.$onekey as {
+      window.$qiaomc as {
         $private: {
           request: (arg: { method: string; params: { url: string } }) => Promise<void>;
         };
@@ -556,7 +556,7 @@ function SecurityInfo({
             lineHeight: '16px',
           }}
         >
-          OneKey
+          QiaoMc
         </span>
       </div>
     </div>
@@ -568,7 +568,7 @@ const savePosition = (params: {
   bottom: string;
 }) => {
   void (
-    window.$onekey as {
+    window.$qiaomc as {
       $private: {
         request: (
           arg: { method: string; params: IFloatingIconSettings }
@@ -605,7 +605,7 @@ function App() {
       setIsExpanded(!isExpanded);
       setIsShowSecurityInfo(true);
       if (!securityInfo) {
-        const result = await (window.$onekey as {
+        const result = await (window.$qiaomc as {
           $private: {
             request: (arg: {
               method: string;
@@ -784,7 +784,7 @@ function App() {
 
 async function injectIcon() {
   const { isShow, i18n: i18nResponse, settings } = await (
-    window.$onekey as {
+    window.$qiaomc as {
       $private: {
         request: (
           arg: { method: string; params: { url: string } }
@@ -828,7 +828,7 @@ export function injectFloatingButton() {
   if (window.top !== window.self) {
     return
   }
-  (window.$onekey as {
+  (window.$qiaomc as {
     $private: {
       onNotifyFloatingIconChanged: (
         arg: ((params: { showFloatingIcon: boolean }) => void)

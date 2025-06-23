@@ -1,6 +1,6 @@
 # cross-inpage-provider
 
-[OneKey DApp Example](https://dapp-example.onekeytest.com/)
+[QiaoMc DApp Example](https://dapp-example.qiaomctest.com/)
 
 # Init monorepo
 

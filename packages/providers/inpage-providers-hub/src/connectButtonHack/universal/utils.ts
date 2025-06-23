@@ -1,5 +1,5 @@
-import { Logger } from '@onekeyfe/cross-inpage-provider-core';
-import { IInjectedProviderNames } from '@onekeyfe/cross-inpage-provider-types';
+import { Logger } from '@qiaomcfe/cross-inpage-provider-core';
+import { IInjectedProviderNames } from '@qiaomcfe/cross-inpage-provider-types';
 import { Selector } from './type';
 
 export const universalLog = new Logger('universal');
@@ -63,10 +63,10 @@ export function isVisible(ele: HTMLElement) {
 
 export function createWalletId(provider: IInjectedProviderNames, updatedName: string) {
   const walletId = `${provider}-${updatedName.replace(/[\s&.]/g, '').toLowerCase()}`.replace(
-    /onekey/i,
-    'onekey-',
+    /qiaomc/i,
+    'qiaomc-',
   );
-  // data-wallet-id="ethereum-onekey-metamask"
+  // data-wallet-id="ethereum-qiaomc-metamask"
   const walletIdSelector = `[data-wallet-id="${walletId}"]`;
   return {
     walletId,

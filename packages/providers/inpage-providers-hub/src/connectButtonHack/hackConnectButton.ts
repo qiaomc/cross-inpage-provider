@@ -2,10 +2,10 @@ import {
   ISpecialPropertyProviderNamesReflection,
   Logger,
   checkWalletSwitchEnable,
-} from '@onekeyfe/cross-inpage-provider-core';
+} from '@qiaomcfe/cross-inpage-provider-core';
 import { throttle, ThrottleSettings } from 'lodash-es';
-import { IInjectedProviderNames } from '@onekeyfe/cross-inpage-provider-types';
-import type { IWindowOneKeyHub } from '../injectWeb3Provider';
+import { IInjectedProviderNames } from '@qiaomcfe/cross-inpage-provider-types';
+import type { IWindowQiaoMcHub } from '../injectWeb3Provider';
 
 const hackButtonLogger = new Logger('hackButton');
 function checkIfInjectedProviderConnected({
@@ -13,7 +13,7 @@ function checkIfInjectedProviderConnected({
 }: {
   providerName: IInjectedProviderNames;
 }) {
-  const hub = window.$onekey as IWindowOneKeyHub;
+  const hub = window.$qiaomc as IWindowQiaoMcHub;
   if (providerName === IInjectedProviderNames.ethereum) {
     // dapp disconnect won't remove accounts in wallet, so this check won't working
     // @ts-ignore
@@ -96,7 +96,7 @@ export async function detectQrcodeFromSvg({
   const encodedData = window.btoa(serialized);
   const base64 = `data:image/svg+xml;base64,${encodedData}`;
 
-  const res = (await (window.$onekey as IWindowOneKeyHub)?.$private?.request({
+  const res = (await (window.$qiaomc as IWindowQiaoMcHub)?.$private?.request({
     method: 'wallet_scanQrcode',
     params: [{ base64 }],
   })) as { result?: string };
@@ -149,7 +149,7 @@ function addRotateAnimationToCss() {
   const css = window.document.styleSheets[0];
   css.insertRule(
     `
-@keyframes oneKeySpinner {
+@keyframes qiaoMcSpinner {
   0% {
     transform: rotate(0deg);
   }
@@ -174,8 +174,8 @@ export function createWalletConnectToButton({
   if (!uri || !uri.startsWith('wc:')) {
     return;
   }
-  const onekeyHub = window.$onekey as IWindowOneKeyHub | undefined;
-  const datasetKey = 'onekey_auto_created_wallet_connect_btn'; // can not include `-`
+  const qiaomcHub = window.$qiaomc as IWindowQiaoMcHub | undefined;
+  const datasetKey = 'qiaomc_auto_created_wallet_connect_btn'; // can not include `-`
   if (!container.querySelector(`[data-${datasetKey}]`)) {
     const btn = document.createElement('div');
     btn.dataset[datasetKey] = 'true';
@@ -194,11 +194,11 @@ cursor: pointer;
 text-align: center;
     `;
     // i18n key:
-    //    action__connect_onekey_extension
-    //    action__connect_onekey
+    //    action__connect_qiaomc_extension
+    //    action__connect_qiaomc
     btn.innerHTML = `
-    <span>Connect OneKey</span>
-    <span class='onekey-spinner-element' style='
+    <span>Connect QiaoMc</span>
+    <span class='qiaomc-spinner-element' style='
     display: none;
     vertical-align: middle;
     width: 12px;
@@ -214,13 +214,13 @@ text-align: center;
       btn.dataset['isClicked'] = 'true';
       btn.style.backgroundColor = '#bbb';
       btn.style.cursor = 'not-allowed';
-      void onekeyHub?.$private?.request({
+      void qiaomcHub?.$private?.request({
         method: 'wallet_connectToWalletConnect',
         params: { uri },
       });
-      const spinner = btn.querySelector('.onekey-spinner-element') as HTMLElement | undefined;
+      const spinner = btn.querySelector('.qiaomc-spinner-element') as HTMLElement | undefined;
       if (spinner) {
-        spinner.style.animation = 'oneKeySpinner 1s linear infinite';
+        spinner.style.animation = 'qiaoMcSpinner 1s linear infinite';
         spinner.style.display = 'inline-block';
         addRotateAnimationToCss();
       }
@@ -251,7 +251,7 @@ export function createNewImageToContainer({
       svg.remove();
     }
   }
-  const datasetKey = 'onekey_auto_created_icon_img'; // can not include `-`
+  const datasetKey = 'qiaomc_auto_created_icon_img'; // can not include `-`
   if (!container.querySelector(`[data-${datasetKey}]`)) {
     const newImg = document.createElement('img');
     newImg.src = icon;

@@ -1,7 +1,7 @@
-import type { TronWeb } from '@onekeyfe/onekey-tron-provider';
+import type { TronWeb } from '@qiaomcfe/qiaomc-tron-provider';
 
 export interface IProviderApi {
-  isOneKey?: boolean;
+  isQiaoMc?: boolean;
   request<T>({ method, params }: { method: string; params?: any }): Promise<T>;
   tronWeb?: TronWeb;
 }

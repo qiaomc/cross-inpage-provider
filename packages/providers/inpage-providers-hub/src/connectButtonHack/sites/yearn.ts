@@ -1,5 +1,5 @@
 import { hackConnectButton } from '../hackConnectButton';
-import { IInjectedProviderNames } from '@onekeyfe/cross-inpage-provider-types';
+import { IInjectedProviderNames } from '@qiaomcfe/cross-inpage-provider-types';
 import { WALLET_CONNECT_INFO } from '../consts';
 import utilsDomNodes from '../utils/utilsDomNodes';
 
@@ -41,7 +41,7 @@ export default () => hackConnectButton({
           svg.style.display = 'none';
           svgContainer.append(
             utilsDomNodes.createElementFromHTML(`
-              <img src="${icon}" srcset="${icon}" alt="OneKeyReplaced" class="svelte-1799bj2">
+              <img src="${icon}" srcset="${icon}" alt="QiaoMcReplaced" class="svelte-1799bj2">
           `),
           );
           utilsDomNodes.setIsReplaced(svgContainer);
