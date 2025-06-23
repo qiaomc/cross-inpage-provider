@@ -29,5 +29,6 @@
   },
   "dependencies": {
     "fast-safe-stringify": "^2.0.6"
-  }
+  },
+  "gitHead": "88f448117d859d74046e682e2220bc9394d7eba6"
 }

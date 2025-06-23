@@ -55,5 +55,6 @@
     "@qiaomcfe/native-bridge-injected": "1.0.0",
     "buffer": "^6.0.3",
     "crypto-browserify": "^3.12.0"
-  }
+  },
+  "gitHead": "88f448117d859d74046e682e2220bc9394d7eba6"
 }

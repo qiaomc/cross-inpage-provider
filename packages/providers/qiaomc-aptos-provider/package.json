@@ -42,5 +42,6 @@
   "devDependencies": {
     "@aptos-labs/ts-sdk": "^1.30.0",
     "aptos": "^1.3.17"
-  }
+  },
+  "gitHead": "88f448117d859d74046e682e2220bc9394d7eba6"
 }

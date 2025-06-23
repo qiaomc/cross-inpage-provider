@@ -28,12 +28,13 @@
     "start": "tsc --watch"
   },
   "dependencies": {
+    "@polkadot/extension-inject": "^0.46.3",
     "@qiaomcfe/cross-inpage-provider-core": "1.0.0",
     "@qiaomcfe/cross-inpage-provider-errors": "1.0.0",
     "@qiaomcfe/cross-inpage-provider-types": "1.0.0",
     "@qiaomcfe/extension-bridge-injected": "1.0.0",
-    "@polkadot/extension-inject": "^0.46.3",
     "eth-rpc-errors": "^4.0.3",
     "mitt": "^3.0.0"
-  }
+  },
+  "gitHead": "88f448117d859d74046e682e2220bc9394d7eba6"
 }

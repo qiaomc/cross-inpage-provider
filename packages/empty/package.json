@@ -26,5 +26,6 @@
     "prebuild": "rm -rf dist",
     "build": "tsc && tsc --project tsconfig.cjs.json",
     "start": "tsc --watch"
-  }
+  },
+  "gitHead": "88f448117d859d74046e682e2220bc9394d7eba6"
 }

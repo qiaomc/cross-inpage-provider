@@ -35,5 +35,6 @@
     "@qiaomcfe/extension-bridge-injected": "1.0.0",
     "eth-rpc-errors": "^4.0.3",
     "mitt": "^3.0.0"
-  }
+  },
+  "gitHead": "88f448117d859d74046e682e2220bc9394d7eba6"
 }
